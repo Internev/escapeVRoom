@@ -7,6 +7,7 @@ import {
   View,
   Sphere,
   PointLight,
+  Model
 } from 'react-vr';
 
 export default class escapeVRoom extends React.Component {
@@ -22,7 +23,8 @@ export default class escapeVRoom extends React.Component {
           />
         <Text
           style={{
-            backgroundColor: '#777879',
+            backgroundColor: '#78b3ee',
+            color: 'rgb(89, 0, 255)',
             fontSize: 0.8,
             fontWeight: '400',
             layoutOrigin: [0.5, 0.5],
@@ -32,7 +34,7 @@ export default class escapeVRoom extends React.Component {
             textAlignVertical: 'center',
             transform: [{translate: [0, 0, -3]}],
           }}>
-          hello
+          escApe
         </Text>
         <Sphere
           style={{
@@ -43,6 +45,54 @@ export default class escapeVRoom extends React.Component {
           widthSegments={20}
           heightSegments={20}
           />
+          <Model
+            source={{
+              obj: asset('Tree.obj'),
+            }}
+            style={{
+              color:'rgba(218, 254, 0, 1)',
+              transform: [{translate: [3, -2, -5]},
+                          {rotateY: 90},
+            ],
+            }}
+            lit
+            />
+        <Model
+          source={{
+            obj: asset('note.obj'),
+          }}
+          style={{
+            color:'rgba(122, 231, 255, 1)',
+            transform: [{translate: [3, 0, 15]},
+                        {rotateY: 90},
+          ],
+          }}
+          wireframe
+          />
+          <Model
+            source={{
+              obj: asset('note.obj'),
+            }}
+            style={{
+              color:'rgba(255, 206, 122, 1)',
+              transform: [{translate: [-3, 0, 15]},
+                          {rotateY: 90},
+            ],
+            }}
+            wireframe
+            />
+            <Model
+              source={{
+                obj: asset('note.obj'),
+              }}
+              style={{
+                color:'rgba(193, 122, 255, 1)',
+                transform: [{translate: [-9, 0, 15]},
+                            {rotateY: 90},
+              ],
+              }}
+              wireframe
+              />
       </View>
     );
   }
